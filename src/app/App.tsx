@@ -44,16 +44,16 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen w-screen">
+    <div className="flex flex-col h-screen w-screen overflow-hidden">
       <Header />
-      <div className="flex-1 flex md:flex-row flex-col-reverse">
+      <div className="flex-1 flex md:flex-row flex-col-reverse overflow-hidden">
         <Navbar>
           <NavItem to="/">
             <GeoAltFill size={24} />
             <span>Mapa</span>
           </NavItem>
         </Navbar>
-        <main className="flex-1 flex md:m-1 p-4 overflow-auto bg-zinc-200 dark:bg-zinc-900 md:rounded-xl">
+        <main className="flex-1 flex md:m-1 p-4 bg-zinc-200 dark:bg-zinc-900 md:rounded-xl overflow-hidden">
           <Outlet />
         </main>
       </div>
