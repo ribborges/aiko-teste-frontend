@@ -43,7 +43,7 @@ export default function StatePage() {
                         second: "2-digit",
                     })
                 };
-            }) || []
+            }).reverse() || []
         )
     }, [selectedStateHistory, states, equipments]);
 
