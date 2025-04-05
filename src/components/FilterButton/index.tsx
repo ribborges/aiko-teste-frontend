@@ -13,7 +13,7 @@ function FilterButton(props: FilterButtonProps) {
             className={clsx(
                 `
                 p-2
-                text-zinc-200
+                text-zinc-200 text-xs md:text-sm
                 border rounded-full
                 hover:opacity-50
                 transition duration-200
