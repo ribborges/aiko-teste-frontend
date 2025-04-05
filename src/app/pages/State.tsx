@@ -14,7 +14,7 @@ interface StateHistory {
     timestamp: string
 }
 
-export default function MapPage() {
+export default function StatePage() {
     const { states, stateHistory, equipments } = useEquipmentStore();
     const { equipmentId } = useFilterStore();
 
@@ -63,7 +63,7 @@ export default function MapPage() {
             header: "Data",
             accessorKey: "timestamp",
         }
-    ]
+    ];
 
     const tableFooter = (
         <TableRow>
@@ -71,7 +71,7 @@ export default function MapPage() {
                 Total de estados: {stateHistoryData.length}
             </TableCell>
         </TableRow>
-    )
+    );
 
     return (
         <div className="flex-1 flex flex-col gap-4 overflow-auto">

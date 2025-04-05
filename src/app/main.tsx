@@ -6,7 +6,11 @@ import { APIProvider } from '@vis.gl/react-google-maps';
 import { mapsApiKey } from '@/config/env.tsx';
 
 import App from './App.tsx';
-import Map from './pages/Map.tsx';
+import StatePage from './pages/State.tsx';
+import HomePage from './pages/Home.tsx';
+import RoutePage from './pages/Route.tsx';
+import OperationPage from './pages/Operation.tsx';
+import NotFoundPage from './pages/NotFound.tsx';
 
 import "@/styles/global.css";
 
@@ -16,7 +20,11 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route path="/" element={<Map />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/state" element={<StatePage />} />
+            <Route path="/route" element={<RoutePage />} />
+            <Route path="/operation" element={<OperationPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
