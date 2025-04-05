@@ -61,7 +61,7 @@ export default function App() {
             <span>Trajeto</span>
           </NavItem>
         </Navbar>
-        <main className="flex-1 flex md:m-1 p-4 bg-zinc-200 dark:bg-zinc-900 md:rounded-xl overflow-hidden">
+        <main className="flex-1 flex md:m-1 bg-zinc-200 dark:bg-zinc-900 md:rounded-xl overflow-hidden">
           <Outlet />
         </main>
       </div>

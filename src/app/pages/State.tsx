@@ -81,7 +81,7 @@ export default function StatePage() {
     );
 
     return (
-        <div className="flex-1 flex flex-col gap-4 overflow-auto">
+        <div className="flex-1 flex flex-col gap-4 overflow-auto p-4">
             <div className="flex items-center justify-between gap-2">
                 <H1>Mapa</H1>
                 <div className="flex gap-1 overflow-auto">

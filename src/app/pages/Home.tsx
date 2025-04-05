@@ -87,7 +87,7 @@ export default function HomePage() {
     );
 
     return (
-        <div className="flex-1 flex flex-col gap-4 overflow-auto">
+        <div className="flex-1 flex flex-col gap-4 overflow-auto p-4">
             <H1>Início</H1>
             <div className="flex-1 flex flex-col gap-4">
                 <H2>Lista de equipamentos</H2>
