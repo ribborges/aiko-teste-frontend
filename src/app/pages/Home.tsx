@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { DataTable, DataTableColumn } from "@/components/Table";
 import { TableRow, TableCell } from "@/components/Table/Table";
 import { Tag } from "@/components/Tag";
+import { H1, H2 } from "@/components/Heading";
 import { useEquipmentStore } from "@/lib/store";
-import { useEffect, useState } from "react";
 
 interface Equipment {
     id: string,
@@ -86,9 +88,9 @@ export default function HomePage() {
 
     return (
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
-            <h1 className="text-2xl font-bold">Início</h1>
+            <H1>Início</H1>
             <div className="flex-1 flex flex-col gap-4">
-                <h2 className="text-xl font-bold">Lista de equipamentos</h2>
+                <H2>Lista de equipamentos</H2>
                 <DataTable
                     data={equimentData}
                     columns={columns}

@@ -4,8 +4,9 @@ import { StateMap } from "@/components/Map";
 import { DataTable, DataTableColumn } from "@/components/Table";
 import { TableRow, TableCell } from "@/components/Table/Table";
 import { Tag } from "@/components/Tag";
-import { useEquipmentStore, useFilterStore } from "@/lib/store";
 import { FilterButton } from "@/components/FilterButton";
+import { H1, H2 } from "@/components/Heading";
+import { useEquipmentStore, useFilterStore } from "@/lib/store";
 
 interface StateHistory {
     stateId: string,
@@ -82,7 +83,7 @@ export default function StatePage() {
     return (
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
             <div className="flex items-center justify-between gap-2">
-                <h1 className="text-2xl font-bold">Mapa</h1>
+                <H1>Mapa</H1>
                 <div className="flex gap-1 overflow-auto">
                     <FilterButton
                         key="all-models"
@@ -109,7 +110,7 @@ export default function StatePage() {
             </div>
             <div className="flex-1 flex flex-col gap-4">
                 <div className="flex items-center justify-between gap-2">
-                    <h2 className="text-xl font-bold">Histórico de estado do equipamento</h2>
+                    <H2>Histórico de estado do equipamento</H2>
                     <div className="flex gap-1 overflow-auto">
                         <FilterButton
                             key="all-states"

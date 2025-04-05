@@ -1,4 +1,5 @@
 import { FilterButton } from "@/components/FilterButton";
+import { H1 } from "@/components/Heading";
 import RouteMap from "@/components/Map/RouteMap";
 import { useEquipmentStore, useFilterStore } from "@/lib/store";
 
@@ -10,7 +11,7 @@ export default function RoutePage() {
     return (
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
             <div className="flex items-center justify-between gap-2">
-                <h1 className="text-2xl font-bold">Trajeto</h1>
+                <H1>Trajeto</H1>
                 <div className="flex gap-1 overflow-auto">
                     {
                         equipments.map((equipment) => (
