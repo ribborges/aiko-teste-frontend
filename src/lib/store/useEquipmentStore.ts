@@ -16,7 +16,7 @@ type Actions = {
     setPositionHistory: (positionHistory: Array<EquipmentPositionHistory>) => void;
     setStates: (states: Array<EquipmentState>) => void;
     setStateHistory: (stateHistory: Array<EquipmentStateHistory>) => void;
-}
+};
 
 const useEquipmentStore = create<state & Actions>((set) => ({
     equipments: [],
