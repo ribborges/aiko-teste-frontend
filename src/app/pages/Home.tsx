@@ -46,7 +46,7 @@ export default function HomePage() {
                 };
             })
         );
-    }, [states, models, equipments]);
+    }, [states, models, equipments, positionHistory, stateHistory]);
 
     const columns: DataTableColumn<Equipment>[] = [
         {

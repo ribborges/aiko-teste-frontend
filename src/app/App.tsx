@@ -41,7 +41,7 @@ export default function App() {
         })),
       })) as EquipmentStateHistory[]
     );
-  }, []);
+  });
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden">

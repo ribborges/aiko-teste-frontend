@@ -52,7 +52,7 @@ export default function StatePage() {
                 };
             }).reverse() || []
         )
-    }, [selectedStateHistory, states, equipments]);
+    }, [selectedStateHistory, states, equipments, equipmentId]);
 
     const columns: DataTableColumn<StateHistory>[] = [
         {

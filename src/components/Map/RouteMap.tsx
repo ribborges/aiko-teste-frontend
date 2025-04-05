@@ -59,7 +59,7 @@ export default function RouteMap() {
             return () => {
                 directionsRenderer.setMap(null);
             };
-        }, [directionsService, directionsRenderer, equipmentPositionHistory, equipmentId]);
+        }, [directionsService, directionsRenderer]);
 
         return null;
     }
