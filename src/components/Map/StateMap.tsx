@@ -29,6 +29,7 @@ export default function StateMap() {
             colorScheme='FOLLOW_SYSTEM'
             defaultZoom={10}
             defaultCenter={position}
+            streetViewControl={false}
         >
             {positionHistory.map((position, index) => {
                 const lastPosition = position.positions[position.positions.length - 1];
