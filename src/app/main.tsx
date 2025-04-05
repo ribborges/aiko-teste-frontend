@@ -9,7 +9,6 @@ import App from './App.tsx';
 import StatePage from './pages/State.tsx';
 import HomePage from './pages/Home.tsx';
 import RoutePage from './pages/Route.tsx';
-import OperationPage from './pages/Operation.tsx';
 import NotFoundPage from './pages/NotFound.tsx';
 
 import "@/styles/global.css";
@@ -23,7 +22,6 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/" element={<HomePage />} />
             <Route path="/state" element={<StatePage />} />
             <Route path="/route" element={<RoutePage />} />
-            <Route path="/operation" element={<OperationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { CompassFill, CurrencyExchange, GearFill, HouseFill } from "react-bootstrap-icons";
+import { CompassFill, GearFill, HouseFill } from "react-bootstrap-icons";
 import { Outlet } from "react-router";
 
 import { Header } from "@/components/Header";
@@ -59,10 +59,6 @@ export default function App() {
           <NavItem to="/route">
             <CompassFill size={24} />
             <span>Trajeto</span>
-          </NavItem>
-          <NavItem to="/operation">
-            <CurrencyExchange size={24} />
-            <span>Operação</span>
           </NavItem>
         </Navbar>
         <main className="flex-1 flex md:m-1 p-4 bg-zinc-200 dark:bg-zinc-900 md:rounded-xl overflow-hidden">
