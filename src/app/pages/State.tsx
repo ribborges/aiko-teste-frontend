@@ -5,6 +5,7 @@ import { DataTable, DataTableColumn } from "@/components/Table";
 import { TableRow, TableCell } from "@/components/Table/Table";
 import { Tag } from "@/components/Tag";
 import { useEquipmentStore, useFilterStore } from "@/lib/store";
+import { FilterButton } from "@/components/FilterButton";
 
 interface StateHistory {
     stateId: string,
@@ -15,13 +16,18 @@ interface StateHistory {
 }
 
 export default function StatePage() {
-    const { states, stateHistory, equipments } = useEquipmentStore();
-    const { equipmentId } = useFilterStore();
+    const { states, stateHistory, equipments, models } = useEquipmentStore();
+    const { equipmentId, stateId, modelId, setStateId, setModelId } = useFilterStore();
 
     const selectedEquipment = equipments.find((equipment) => equipment.id === equipmentId);
     const selectedStateHistory = stateHistory.find((history) => history.equipmentId === equipmentId);
 
     const [stateHistoryData, setStateHistoryData] = useState<StateHistory[]>([]);
+
+    const filteredStateHistory = stateHistoryData.filter((state) => {
+        if (stateId) return state.stateId === stateId;
+        return true;
+    });
 
     useEffect(() => {
         setStateHistoryData(
@@ -68,21 +74,65 @@ export default function StatePage() {
     const tableFooter = (
         <TableRow>
             <TableCell colSpan={6} className="text-right">
-                Total de estados: {stateHistoryData.length}
+                Total de estados: {filteredStateHistory.length}
             </TableCell>
         </TableRow>
     );
 
     return (
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
-            <h1 className="text-2xl font-bold">Mapa</h1>
+            <div className="flex items-center justify-between gap-2">
+                <h1 className="text-2xl font-bold">Mapa</h1>
+                <div className="flex gap-1 overflow-auto">
+                    <FilterButton
+                        key="all-models"
+                        isSelected={modelId === undefined}
+                        onClick={() => setModelId(undefined)}
+                    >
+                        Todos
+                    </FilterButton>
+                    {
+                        models.map((model) => (
+                            <FilterButton
+                                key={model.id}
+                                isSelected={modelId === model.id}
+                                onClick={() => setModelId(model.id)}
+                            >
+                                {model.name}
+                            </FilterButton>
+                        ))
+                    }
+                </div>
+            </div>
             <div className="flex-1 min-h-48 md:min-h-64 lg:min-h-96 max-w-screen overflow-hidden rounded-2xl text-black">
                 <StateMap />
             </div>
             <div className="flex-1 flex flex-col gap-4">
-                <h2 className="text-xl font-bold">Histórico de estado do equipamento</h2>
+                <div className="flex items-center justify-between gap-2">
+                    <h2 className="text-xl font-bold">Histórico de estado do equipamento</h2>
+                    <div className="flex gap-1 overflow-auto">
+                        <FilterButton
+                            key="all-states"
+                            isSelected={stateId === undefined}
+                            onClick={() => setStateId(undefined)}
+                        >
+                            Todos
+                        </FilterButton>
+                        {
+                            states.map((state) => (
+                                <FilterButton
+                                    key={state.id}
+                                    isSelected={stateId === state.id}
+                                    onClick={() => setStateId(state.id)}
+                                >
+                                    {state.name}
+                                </FilterButton>
+                            ))
+                        }
+                    </div>
+                </div>
                 <DataTable
-                    data={stateHistoryData}
+                    data={filteredStateHistory}
                     columns={columns}
                     caption={selectedEquipment ? `Lista de histórico de estados do equipamento ${selectedEquipment?.name}` : "Nenhum equipamento selecionado"}
                     footer={tableFooter}
