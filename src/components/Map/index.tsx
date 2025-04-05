@@ -1,5 +1,5 @@
-import EquipmentMap from "./EquipmentMap";
+import StateMap from "./StateMap";
 import EquipmentMarker from "./EquipmentMarker";
 import EquipmentPopup from "./EquipmentPopup";
 
-export { EquipmentMap, EquipmentMarker, EquipmentPopup };
+export { StateMap, EquipmentMarker, EquipmentPopup };

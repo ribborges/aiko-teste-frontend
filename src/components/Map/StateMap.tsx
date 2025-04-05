@@ -7,7 +7,7 @@ import { useEquipmentStore, useFilterStore } from "@/lib/store";
 import EquipmentMarker from "./EquipmentMarker";
 import EquipmentPopup from "./EquipmentPopup";
 
-export default function EquipmentMap() {
+export default function StateMap() {
     const [selectedEquipment, setSelectedEquipment] = useState<string | undefined>(undefined);
     const [isOpen, setIsOpen] = useState(false);
 

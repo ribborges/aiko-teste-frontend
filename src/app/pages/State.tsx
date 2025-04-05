@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { EquipmentMap } from "@/components/Map";
+import { StateMap } from "@/components/Map";
 import { DataTable, DataTableColumn } from "@/components/Table";
 import { TableRow, TableCell } from "@/components/Table/Table";
 import { Tag } from "@/components/Tag";
@@ -77,7 +77,7 @@ export default function StatePage() {
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
             <h1 className="text-2xl font-bold">Mapa</h1>
             <div className="flex-1 min-h-48 md:min-h-64 lg:min-h-96 max-w-screen overflow-hidden rounded-2xl text-black">
-                <EquipmentMap />
+                <StateMap />
             </div>
             <div className="flex-1 flex flex-col gap-4">
                 <h2 className="text-xl font-bold">Histórico de estado do equipamento</h2>
