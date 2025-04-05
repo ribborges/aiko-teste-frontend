@@ -84,7 +84,7 @@ export default function MapPage() {
                 <DataTable
                     data={stateHistoryData}
                     columns={columns}
-                    caption={`Lista de histórico de estados do equipamento ${selectedEquipment?.name}`}
+                    caption={selectedEquipment ? `Lista de histórico de estados do equipamento ${selectedEquipment?.name}` : "Nenhum equipamento selecionado"}
                     footer={tableFooter}
                 />
             </div>

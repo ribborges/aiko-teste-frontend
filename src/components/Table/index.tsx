@@ -29,8 +29,8 @@ function DataTable<T>({ data, columns, caption, footer, className }: DataTablePr
       <TableBody>
         {data.length === 0 ? (
           <TableRow>
-            <TableCell colSpan={columns.length} className="text-center py-8 text-gray-500">
-              No data available
+            <TableCell colSpan={columns.length} className="text-center py-8">
+              <span className="text-gray-500">Nenhum dado encontrado</span>
             </TableCell>
           </TableRow>
         ) : (
